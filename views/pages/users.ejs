@@ -3,8 +3,26 @@
 <%- include ../templates/head %>
 <body>
     <%- include ../templates/header %>
-    <% console.log(users)%>
-    <ul>
-    </ul>
+    <table>
+        <caption>Users</caption>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Actions<br>Edit</th>
+                <th>Actions<br>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% users.forEach((user)=>{%>
+            <tr>
+                <td class="user-username"><%- user.username%></td>
+                <td class="user-email"><%- user.email%></td>
+                <td class="user-edit"><a href="/user/edit/<%- user._id%>">Edit</a></td>
+                <td class="user-delete"><a href="/user/delete/<%- user._id%>">Delete</a></td>
+            </tr>
+        <%});%>
+        </tbody>
+    </table>
 </body>
 </html>

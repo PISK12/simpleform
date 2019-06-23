@@ -5,11 +5,11 @@
     <%- include ../templates/header %>
 
     <div class="form-container">
-        <form action="/user" method="post">
+        <form action="/user/edit/<%- user._id%>" method="post">
             <label for="form-email">Email</label>
-            <input id="form-email" type="email" name="email">
+            <input id="form-email" type="email" name="email" value="<%- user.email%>">
             <label for="form-username">Username</label>
-            <input id="form-username" type="text" name="username">
+            <input id="form-username" type="text" name="username" value="<%- user.username%>">
             <input type="submit" value="Send Me!">
         </form>
     </div>

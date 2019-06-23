@@ -8,7 +8,11 @@ const UsersController=require('../controllers/UsersController');
 /* GET home page. */
 router.get('/',PagesController.home);
 
-router.post('/users',UsersController.saveUser);
 router.get('/users',UsersController.showUsers);
+router.get('/user/delete/:userId',UsersController.deleteUser);
+router.get('/user/edit/:userId',UsersController.showUser);
+router.post('/user',UsersController.saveUser);
+router.post('/user/edit/:userId',UsersController.editUser);
+
 
 module.exports = router;

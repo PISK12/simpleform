@@ -1,0 +1,28 @@
+version: '3'
+services:
+    app:
+        container_name: node-app
+        restart: always
+        image: node:10
+        volumes:
+            - .:/usr/src/app
+        working_dir: /usr/src/app
+        command: bash -c 'npm install && npm start'
+        ports:
+            - '3000:3000'
+        user: '1000:1000'
+        links:
+            - mongo
+
+    mongo:
+        container_name: mongo
+        image: 'mongo'
+        ports:
+            - '27017:27017'
+
+    mongo-express:
+        image: "mongo-express:latest"
+        ports:
+            - 8081:8081
+        links:
+            - mongo

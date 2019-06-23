@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<%- include ../templates/head %>
+<body>
+    <%- include ../templates/header %>
+
+    <div class="form-container">
+        <form action="/users" method="post">
+            <label for="form-email">Email</label>
+            <input id="form-email" type="email" name="email">
+            <label for="form-username">Username</label>
+            <input id="form-username" type="text" name="username">
+            <input type="submit" value="Send Me!">
+        </form>
+    </div>
+</body>
+</html>
